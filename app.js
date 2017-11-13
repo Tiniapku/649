@@ -21,7 +21,7 @@ var nodes = [
     {id: 4},
     {id: 5}
   ],
-  lastNodeId = 2,
+  lastNodeId = 0,
   links = [
   ];
 
@@ -66,10 +66,12 @@ var lineClass = "";
 
 function blueLine() {
   lineClass = "linkBlue link";
+  return
 }
 
 function redLine() {
-  return lineClass = "linkRed link";
+  lineClass = "linkRed link";
+  return
 }
 
 // handles to link and node element groups
@@ -246,7 +248,7 @@ function restart() {
 
 function mousedown() {
   // prevent I-bar on drag
-  //d3.event.preventDefault();
+  d3.event.preventDefault();
 
   // because :active only works in WebKit?
   svg.classed('active', true);
