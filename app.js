@@ -59,11 +59,17 @@ var force = d3.layout.force()
 
 // line displayed when dragging new nodes
 var drag_line = svg.append('svg:path')
-  .attr('class', 'link dragline hidden')
-  .attr('d', 'M0,0L0,0');
+    .attr('class', 'link dragline hidden')
+    .attr('d', 'M0,0L0,0');
+
+var lineClass = "";
 
 function blueLine() {
-  drag_line.attr('class', 'link')
+  lineClass = "linkBlue link";
+}
+
+function redLine() {
+  return lineClass = "linkRed link";
 }
 
 // handles to link and node element groups
@@ -116,7 +122,7 @@ function restart() {
 
   // add new links
   path.enter().append('svg:path')
-    .attr('class', 'link')
+    .attr('class', lineClass)
     .classed('selected', function(d) { return d === selected_link; })
     .on('mousedown', function(d) {
       if(d3.event.ctrlKey) return;

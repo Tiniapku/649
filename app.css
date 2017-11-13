@@ -12,18 +12,19 @@ svg:not(.active):not(.ctrl) {
   cursor: crosshair;
 }
 
-path.linkRed {
+path.link {
   fill: none;
-  stroke: red;
+  stroke: #000;
   stroke-width: 4px;
   cursor: default;
 }
 
+path.linkRed {
+  stroke: red;
+}
+
 path.linkBlue {
-    fill: none;
   stroke: blue;
-  stroke-width: 4px;
-  cursor: default;
 }
 
 svg:not(.active):not(.ctrl) path.link {
